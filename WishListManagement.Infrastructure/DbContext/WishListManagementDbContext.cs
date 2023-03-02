@@ -14,7 +14,7 @@ namespace WishListManagement.Infrastructure.DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<BaseEntity> BaseEntities { get; set; }
-        public DbSet<WishListItem> WishList { get; set; }
+        public DbSet<WishListItem> WishLists { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.AddFromAssembly(typeof(WishListManagementDbContext).Assembly);
