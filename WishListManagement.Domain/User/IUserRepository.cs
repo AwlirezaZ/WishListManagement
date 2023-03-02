@@ -9,7 +9,7 @@ namespace WishListManagement.Domain.User
     public interface IUserRepository
     {
         bool Create(User user);
-        User GeyUserById(long id);
+        User GetUserById(long id);
         bool Delete(long id);
         bool Modify(User user);
     }
