@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WishListManagement.Application.Contracts.User.Service;
+using WishListManagement.Application.Contracts.User.ViewModels;
 
 namespace WishListManagement.Controllers
 {
@@ -23,6 +24,13 @@ namespace WishListManagement.Controllers
             return View(User);
         }
 
-       
+        [HttpPost]
+        public ActionResult CreateUser(CreateUserViewModel viewModel)
+        {
+            return View();
+
+        }
+
+
     }
 }
