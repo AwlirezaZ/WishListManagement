@@ -6,14 +6,12 @@ using System.Web.Mvc;
 using WishListManagement.Domain.BaseEntity;
 using WishListManagement.Infrastructure.DbContext;
 
-namespace WishlistManagement.Controllers
+namespace WishListManagement.Controllers
 {
     public class HomeController : Controller
     {
-        private WishListManagementDbContext db = new WishListManagementDbContext();
         public ActionResult Index()
         {
-            db.BaseEntities.Add(new BaseEntity());
             return View();
         }
 
