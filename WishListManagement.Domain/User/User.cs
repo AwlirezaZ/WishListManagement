@@ -9,6 +9,6 @@ namespace WishListManagement.Domain.User
         public string Password { get; set; }
         public string Name { get; set; }
         public DateTime? BirthDate { get; set; }
-        public List<WishList.WishList> WishLists { get; set; }
+        public List<WishList.WishListItem> WishList { get; set; }
     }
 }

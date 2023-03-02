@@ -8,11 +8,11 @@ using WishListManagement.Domain.WishList;
 
 namespace WishListManagement.Infrastructure.Mapping.WishListMapping
 {
-    public class WishListMapping : EntityTypeConfiguration<WishList>
+    public class WishListMapping : EntityTypeConfiguration<WishListItem>
     {
         public WishListMapping()
         {
-            Property(a => a.WishlistDescription).IsRequired();
+            Property(a => a.WishListItemDescription).IsRequired();
             Property(a => a.Priority).IsOptional();
             Property(a => a.RoughPrice).IsOptional();
         }
