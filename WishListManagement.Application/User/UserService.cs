@@ -27,7 +27,7 @@ namespace WishListManagement.Application.User
 
         public UserViewModel GetUserById(long id)
         {
-            var user = _userRepository.GeyUserById(id);
+            var user = _userRepository.GetUserById(id);
             return new UserViewModel();
         }
 
@@ -42,6 +42,12 @@ namespace WishListManagement.Application.User
             var newUser = new Domain.User.User(user.Username, user.Password, user.Name, user.BirthDate);
             _userRepository.Modify(newUser);
             return true;
+        }
+
+        public List<UserViewModel> GetUsersList()
+        {
+            var users = _userRepository.GetUsersList();
+            return new List<UserViewModel>();
         }
     }
 }

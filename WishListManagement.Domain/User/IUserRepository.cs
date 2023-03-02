@@ -12,5 +12,6 @@ namespace WishListManagement.Domain.User
         User GetUserById(long id);
         bool Delete(long id);
         bool Modify(User user);
+        List<User> GetUsersList();
     }
 }

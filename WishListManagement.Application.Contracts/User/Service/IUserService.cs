@@ -13,5 +13,6 @@ namespace WishListManagement.Application.Contracts.User.Service
         UserViewModel GetUserById(long id);
         bool DeleteUser(long id);
         bool ModifyUser(ModifyUserViewModel user);
+        List<UserViewModel> GetUsersList();
     }
 }
