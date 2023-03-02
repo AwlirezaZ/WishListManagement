@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WishListManagement.Application.Contracts.User.Service;
+using WishListManagement.Application.Contracts.User.ViewModels;
 using WishListManagement.Domain.User;
 
 namespace WishListManagement.Application.User
@@ -17,24 +18,30 @@ namespace WishListManagement.Application.User
             _userRepository = userRepository;
         }
 
-        public bool CreateUser(object user)
+        public bool CreateUser(CreateUserViewModel user)
         {
-            
+            var newUser = new Domain.User.User(user.Username, user.Password, user.Name, user.BirthDate);
+            _userRepository.Create(newUser);
+            return true;
         }
 
-        public object GetUserById(long id)
+        public UserViewModel GetUserById(long id)
         {
-            throw new NotImplementedException();
+            var user = _userRepository.GeyUserById(id);
+            return new UserViewModel();
         }
 
         public bool DeleteUser(long id)
         {
-            throw new NotImplementedException();
+            _userRepository.Delete(id);
+            return true;
         }
 
-        public bool ModifyUser(object user)
+        public bool ModifyUser(ModifyUserViewModel user)
         {
-            throw new NotImplementedException();
+            var newUser = new Domain.User.User(user.Username, user.Password, user.Name, user.BirthDate);
+            _userRepository.Modify(newUser);
+            return true;
         }
     }
 }
