@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WishListManagement.Domain.BaseEntity;
+using WishListManagement.Infrastructure.DbContext;
 
 namespace WishlistManagement.Controllers
 {
     public class HomeController : Controller
     {
+        private WishListManagementDbContext db = new WishListManagementDbContext();
         public ActionResult Index()
         {
+            db.BaseEntities.Add(new BaseEntity());
             return View();
         }
 

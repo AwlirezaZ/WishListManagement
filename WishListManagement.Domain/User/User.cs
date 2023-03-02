@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace WishListManagement.Domain.User
 {
-    public class User
+    public class User : BaseEntity.BaseEntity
     {
         public string Username { get; set; }
         public string Password { get; set; }

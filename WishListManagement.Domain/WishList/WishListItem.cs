@@ -8,6 +8,6 @@ namespace WishListManagement.Domain.WishList
         public decimal RoughPrice { get; set; }
         public int Priority { get; set; }
         public User.User User { get; set; }
-        public int UserId { get; set; }
+        public long UserId { get; set; }
     }
 }

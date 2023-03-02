@@ -187,6 +187,16 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WishListManagement.Domain\WishListManagement.Domain.csproj">
+      <Project>{2A0E371B-F2C0-4112-9A55-045790B2DA3D}</Project>
+      <Name>WishListManagement.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WishListManagement.Infrastructure\WishListManagement.Infrastructure.csproj">
+      <Project>{A9E616AE-C694-499B-B0D2-0567052804CF}</Project>
+      <Name>WishListManagement.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
