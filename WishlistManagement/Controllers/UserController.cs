@@ -20,7 +20,7 @@ namespace WishListManagement.Controllers
         public ActionResult Index()
         {
             var users = _userService.GetUsersList();
-            return View();
+            return View(User);
         }
 
        
