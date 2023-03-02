@@ -4,10 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
+using WishListManagement.Domain.BaseEntity;
 
-
-namespace Infrastructure.Mapping.BaseEntityMapping
+namespace WishListManagement.Infrastructure.Mapping.BaseEntityMapping
 {
     public class BaseEntityMapping : EntityTypeConfiguration<BaseEntity>
     {

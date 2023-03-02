@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Domain
+namespace WishListManagement.Domain.User
 {
-    public class User : BaseEntity
+    public class User
     {
         public string Username { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
         public DateTime? BirthDate { get; set; }
-        public List<WishList> WishLists { get; set; }
-
+        public List<WishList.WishList> WishLists { get; set; }
     }
 }

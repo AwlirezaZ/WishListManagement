@@ -1,7 +1,14 @@
-﻿using System.Data.Entity;
-using Domain;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WishListManagement.Domain.BaseEntity;
+using WishListManagement.Domain.User;
+using WishListManagement.Domain.WishList;
 
-namespace Infrastructure.DbContext
+namespace WishListManagement.Infrastructure.DbContext
 {
     public class WishListManagementDbContext : System.Data.Entity.DbContext
     {

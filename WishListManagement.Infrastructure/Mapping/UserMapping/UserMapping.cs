@@ -4,9 +4,9 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain;
+using WishListManagement.Domain.User;
 
-namespace Infrastructure.Mapping
+namespace WishListManagement.Infrastructure.Mapping.UserMapping
 {
     public class UserMapping : EntityTypeConfiguration<User>
     {
