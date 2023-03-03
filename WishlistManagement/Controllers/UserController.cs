@@ -12,6 +12,10 @@ namespace WishListManagement.Controllers
     {
         private readonly IUserService _userService;
 
+        public UserController()
+        {
+            
+        }
         public UserController(IUserService userService)
         {
             _userService = userService;
@@ -21,9 +25,12 @@ namespace WishListManagement.Controllers
         public ActionResult Index()
         {
             var users = _userService.GetUsersList();
-            return View(User);
+            return View(users);
         }
-
+        public ActionResult CreateUser()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult CreateUser(CreateUserViewModel viewModel)
         {

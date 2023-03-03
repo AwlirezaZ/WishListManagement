@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WishListManagement.Application.Contracts.User.Service;
 using WishListManagement.Application.Contracts.User.ViewModels;
+using WishListManagement.Application.Mappers;
 using WishListManagement.Domain.User;
 
 namespace WishListManagement.Application.User
@@ -47,7 +48,7 @@ namespace WishListManagement.Application.User
         public List<UserViewModel> GetUsersList()
         {
             var users = _userRepository.GetUsersList();
-            return new List<UserViewModel>();
+            return UserMapper.Map(users);
         }
     }
 }
