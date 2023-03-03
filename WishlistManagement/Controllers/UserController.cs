@@ -14,7 +14,7 @@ namespace WishListManagement.Controllers
 
         public UserController()
         {
-            
+            IControllerFactory factory = ControllerBuilder.Current.GetControllerFactory();
         }
         public UserController(IUserService userService)
         {

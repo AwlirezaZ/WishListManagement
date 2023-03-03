@@ -14,6 +14,10 @@ namespace WishListManagement.Application.User
     {
         private readonly IUserRepository _userRepository;
 
+        public UserService()
+        {
+            
+        }
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;

@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WishListControllerFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,6 +194,10 @@
     <ProjectReference Include="..\WishListManagement.Application.Contracts\WishListManagement.Application.Contracts.csproj">
       <Project>{C4A45F10-ECBB-493E-8E02-7A4A6909A877}</Project>
       <Name>WishListManagement.Application.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WishListManagement.Application\WishListManagement.Application.csproj">
+      <Project>{4E84A271-17D0-4B52-B468-4CEEE450337E}</Project>
+      <Name>WishListManagement.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\WishListManagement.Domain\WishListManagement.Domain.csproj">
       <Project>{2A0E371B-F2C0-4112-9A55-045790B2DA3D}</Project>
