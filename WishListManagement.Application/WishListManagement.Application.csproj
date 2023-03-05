@@ -50,10 +50,6 @@
       <Project>{C4A45F10-ECBB-493E-8E02-7A4A6909A877}</Project>
       <Name>WishListManagement.Application.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WishListManagement.Domain\WishListManagement.Domain.csproj">
-      <Project>{2A0E371B-F2C0-4112-9A55-045790B2DA3D}</Project>
-      <Name>WishListManagement.Domain</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
