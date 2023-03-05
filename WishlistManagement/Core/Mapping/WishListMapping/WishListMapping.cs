@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using WishListManagement.Domain.WishListItem;
+using WishListManagement.Models.Domain.WishListItem;
 
 namespace WishListManagement.Core.Mapping.WishListMapping
 {

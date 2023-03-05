@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WishListManagement.Domain.BaseEntity;
-
-namespace WishListManagement.Domain.WishListItem
+﻿namespace WishListManagement.Models.Domain.WishListItem
 {
     public class WishListItem : BaseEntity.BaseEntity
 

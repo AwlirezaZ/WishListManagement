@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using WishListManagement.Domain.User;
+using WishListManagement.Models.Domain.User;
 
 namespace WishListManagement.Core.Mapping.UserMapping
 {

@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using WishListManagement.Domain.BaseEntity;
+using WishListManagement.Models.Domain.BaseEntity;
 
 namespace WishListManagement.Core.Mapping.BaseEntityMapping
 {

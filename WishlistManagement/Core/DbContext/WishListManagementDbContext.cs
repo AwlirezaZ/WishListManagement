@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
-using WishListManagement.Domain.BaseEntity;
-using WishListManagement.Domain.User;
-using WishListManagement.Domain.WishListItem;
+using WishListManagement.Models.Domain.BaseEntity;
+using WishListManagement.Models.Domain.User;
+using WishListManagement.Models.Domain.WishListItem;
 
 namespace WishListManagement.Core.DbContext
 {
