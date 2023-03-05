@@ -128,6 +128,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Core\DbContext\WishListManagementDbContext.cs" />
+    <Compile Include="Core\Mapping\BaseEntityMapping\BaseEntityMapping.cs" />
+    <Compile Include="Core\Mapping\UserMapping\UserMapping.cs" />
+    <Compile Include="Core\Mapping\WishListMapping\WishListMapping.cs" />
     <Compile Include="Domain\BaseEntity\BaseEntity.cs" />
     <Compile Include="Domain\User\User.cs" />
     <Compile Include="Domain\WishListItem\WishListItem.cs" />
@@ -195,12 +199,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WishListManagement.Infrastructure\WishListManagement.Infrastructure.csproj">
-      <Project>{A9E616AE-C694-499B-B0D2-0567052804CF}</Project>
-      <Name>WishListManagement.Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
