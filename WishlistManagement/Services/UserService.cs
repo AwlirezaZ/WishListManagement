@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WishListManagement.Mappers;
 using WishListManagement.Models.Domain.User;
 using WishListManagement.Models.ViewModels.User;
 using WishListManagement.Repositories;
@@ -21,6 +22,12 @@ namespace WishListManagement.Services
         {
             var user = new User(viewModel.Username, viewModel.Password, viewModel.Name, viewModel.BirthDate);
             return _userRepository.Create(user);
+        }
+
+        public UserViewModel GetUserById(long id)
+        {
+            var user = _userRepository.GetUserById(id);
+            return UserMapper.Map(user);
         }
     }
 }

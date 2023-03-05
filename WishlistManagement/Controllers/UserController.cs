@@ -30,8 +30,13 @@ namespace WishListManagement.Controllers
         public ActionResult CreateUser(CreateUserViewModel user)
         {
             _userService.Create(user);
-            return RedirectToAction("Index");
+            return RedirectToAction("UserInfo",9);
+        }
 
+        public ActionResult UserInfo(long id)
+        {
+            var userViewModel = _userService.GetUserById(id);
+            return View(userViewModel);
         }
 
 

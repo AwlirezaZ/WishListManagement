@@ -23,5 +23,10 @@ namespace WishListManagement.Repositories
             return true;
         }
 
+        public User GetUserById(long id)
+        {
+            var x = db.Users.Find(id);
+            return null;
+        }
     }
 }

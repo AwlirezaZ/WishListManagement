@@ -132,6 +132,7 @@
     <Compile Include="Core\Mapping\BaseEntityMapping\BaseEntityMapping.cs" />
     <Compile Include="Core\Mapping\UserMapping\UserMapping.cs" />
     <Compile Include="Core\Mapping\WishListMapping\WishListMapping.cs" />
+    <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Models\Domain\BaseEntity\BaseEntity.cs" />
     <Compile Include="Models\Domain\User\User.cs" />
     <Compile Include="Models\Domain\WishListItem\WishListItem.cs" />
@@ -184,6 +185,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\CreateUser.cshtml" />
+    <Content Include="Views\User\UserInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
