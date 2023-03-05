@@ -3,7 +3,7 @@ using WishListManagement.Domain.BaseEntity;
 using WishListManagement.Domain.User;
 using WishListManagement.Domain.WishListItem;
 
-namespace WishlistManagement.Core.DbContext
+namespace WishListManagement.Core.DbContext
 {
     public class WishListManagementDbContext : System.Data.Entity.DbContext
     {

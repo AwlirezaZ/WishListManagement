@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WishListManagement.Domain.BaseEntity;
-using WishListManagement.Infrastructure.DbContext;
 
 namespace WishListManagement.Controllers
 {

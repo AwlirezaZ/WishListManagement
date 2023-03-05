@@ -2,7 +2,7 @@
 using System.Data.Entity.ModelConfiguration;
 using WishListManagement.Domain.User;
 
-namespace WishlistManagement.Core.Mapping.UserMapping
+namespace WishListManagement.Core.Mapping.UserMapping
 {
     public class UserMapping : EntityTypeConfiguration<User>
     {

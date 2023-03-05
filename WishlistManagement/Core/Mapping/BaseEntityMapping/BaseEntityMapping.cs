@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using WishListManagement.Domain.BaseEntity;
 
-namespace WishlistManagement.Core.Mapping.BaseEntityMapping
+namespace WishListManagement.Core.Mapping.BaseEntityMapping
 {
     public class BaseEntityMapping : EntityTypeConfiguration<BaseEntity>
     {

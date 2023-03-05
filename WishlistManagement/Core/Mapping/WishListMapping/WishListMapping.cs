@@ -2,7 +2,7 @@
 using System.Data.Entity.ModelConfiguration;
 using WishListManagement.Domain.WishListItem;
 
-namespace WishlistManagement.Core.Mapping.WishListMapping
+namespace WishListManagement.Core.Mapping.WishListMapping
 {
     public class WishListMapping : EntityTypeConfiguration<WishListItem>
     {
