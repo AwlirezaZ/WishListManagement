@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WishListManagement.Domain.BaseEntity;
 
-namespace WishlistManagement.Domain.User
+namespace WishListManagement.Domain.User
 {
     public class User : BaseEntity.BaseEntity
     {

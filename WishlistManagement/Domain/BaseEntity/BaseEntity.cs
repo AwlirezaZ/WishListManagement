@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WishlistManagement.Domain.BaseEntity
+namespace WishListManagement.Domain.BaseEntity
 {
     public class BaseEntity
     {

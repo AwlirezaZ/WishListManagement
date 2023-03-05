@@ -135,6 +135,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BaseEntityService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\WishListItemService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -178,6 +181,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -193,10 +197,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WishListManagement.Application.Contracts\WishListManagement.Application.Contracts.csproj">
-      <Project>{C4A45F10-ECBB-493E-8E02-7A4A6909A877}</Project>
-      <Name>WishListManagement.Application.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WishListManagement.Infrastructure\WishListManagement.Infrastructure.csproj">
       <Project>{A9E616AE-C694-499B-B0D2-0567052804CF}</Project>
       <Name>WishListManagement.Infrastructure</Name>
