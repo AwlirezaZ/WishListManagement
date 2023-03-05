@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WishListManagement.Models.ViewModels.User;
+using WishListManagement.Services;
 
 namespace WishListManagement.Controllers
 {
     public class UserController : Controller
     {
-
+        private readonly UserService _userService;
         public UserController()
         {
-            
+            _userService = new UserService();
         }
        
 
@@ -25,8 +27,9 @@ namespace WishListManagement.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult CreateUser(string x )
+        public ActionResult CreateUser(CreateUserViewModel user)
         {
+            _userService.Create
             return View();
 
         }
