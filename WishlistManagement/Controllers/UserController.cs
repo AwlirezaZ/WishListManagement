@@ -29,8 +29,8 @@ namespace WishListManagement.Controllers
         [HttpPost]
         public ActionResult CreateUser(CreateUserViewModel user)
         {
-            _userService.Create
-            return View();
+            _userService.Create(user);
+            return RedirectToAction("Index");
 
         }
 

@@ -11,6 +11,8 @@ namespace WishListManagement.Models.Domain.User
             Password = password;
             Name = name;
             BirthDate = birthDate;
+            CreatedDateTime = DateTime.Now;
+            ModifiedDateTime = DateTime.Now;
         }
         public string Username { get; private set; }
         public string Password { get; private set; }
