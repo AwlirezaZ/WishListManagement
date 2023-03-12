@@ -25,5 +25,6 @@ namespace WishListManagement.Mappers
         {
             return users?.Select(Map).ToList();
         }
+
     }
 }

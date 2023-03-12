@@ -29,5 +29,13 @@ namespace WishListManagement.Services
             var user = _userRepository.GetUserById(id);
             return UserMapper.Map(user);
         }
+
+        public bool Modify(ModifyUserViewModel modifyUserViewModel)
+        {
+            var user = _userRepository.GetUserById(modifyUserViewModel.Id);
+            user.Update(modifyUserViewModel.Username,modifyUserViewModel.Password,modifyUserViewModel.Name,modifyUserViewModel.BirthDate);
+            _userRepository.Update(user);
+            return true;
+        }
     }
 }

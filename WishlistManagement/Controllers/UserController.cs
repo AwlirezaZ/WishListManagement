@@ -38,6 +38,17 @@ namespace WishListManagement.Controllers
             var userViewModel = _userService.GetUserById(id);
             return View(userViewModel);
         }
+        public ActionResult EditUser(long id)
+        {
+            var userViewModel = _userService.GetUserById(id);
+            return View(userViewModel);
+        }
+        [HttpPost]
+        public ActionResult EditUser(ModifyUserViewModel user)
+        {
+            _userService.Modify(user);
+            return RedirectToAction("UserInfo", new { id = user.Id });
+        }
 
 
     }

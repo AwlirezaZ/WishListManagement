@@ -27,5 +27,13 @@ namespace WishListManagement.Repositories
         {
             return db.Users.Find(id);
         }
+
+        public bool Update(User user)
+        {
+            db.Entry(user).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return true;
+        }
     }
 }

@@ -25,5 +25,13 @@ namespace WishListManagement.Models.Domain.User
         public DateTime? BirthDate { get; private set; }
         public List<WishListItem.WishListItem> WishList { get; private set; }
 
+        public void Update(string username, string password, string name, DateTime? birthDate)
+        {
+            Username = username;
+            Password = password;
+            Name = name;
+            BirthDate = birthDate;
+            ModifiedDateTime = DateTime.Now;
+        }
     }
 }
