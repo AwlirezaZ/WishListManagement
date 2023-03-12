@@ -14,6 +14,11 @@ namespace WishListManagement.Models.Domain.User
             CreatedDateTime = DateTime.Now;
             ModifiedDateTime = DateTime.Now;
         }
+
+        private User()
+        {
+            
+        }
         public string Username { get; private set; }
         public string Password { get; private set; }
         public string Name { get; private set; }

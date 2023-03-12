@@ -133,6 +133,11 @@
     <Compile Include="Core\Mapping\UserMapping\UserMapping.cs" />
     <Compile Include="Core\Mapping\WishListMapping\WishListMapping.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
+    <Compile Include="Migrations\202303121032427_Test-If-Its-Work.cs" />
+    <Compile Include="Migrations\202303121032427_Test-If-Its-Work.Designer.cs">
+      <DependentUpon>202303121032427_Test-If-Its-Work.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Domain\BaseEntity\BaseEntity.cs" />
     <Compile Include="Models\Domain\User\User.cs" />
     <Compile Include="Models\Domain\WishListItem\WishListItem.cs" />
@@ -202,6 +207,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202303121032427_Test-If-Its-Work.resx">
+      <DependentUpon>202303121032427_Test-If-Its-Work.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
