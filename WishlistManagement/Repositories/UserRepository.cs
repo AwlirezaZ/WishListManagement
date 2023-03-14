@@ -16,11 +16,11 @@ namespace WishListManagement.Repositories
             db = new WishListManagementDbContext();
         }
 
-        public bool Create(User user)
+        public long Create(User user)
         {
             db.Users.Add(user);
             db.SaveChanges();
-            return true;
+            return user.Id;
         }
 
         public User GetUserById(long id)

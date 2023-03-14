@@ -17,7 +17,7 @@ namespace WishListManagement.Services
             _repository = new WishListItemRepository();
         }
 
-        public bool CreateWishListItem(CreateWishListItemViewModel createViewModel)
+        public long CreateWishListItem(CreateWishListItemViewModel createViewModel)
         {
             var wishListItem = new WishListItem(createViewModel.WishListItemDescription, createViewModel.RoughPrice,
                 createViewModel.Priority, createViewModel.UserId);

@@ -18,7 +18,7 @@ namespace WishListManagement.Services
             _userRepository = new UserRepository();
         }
 
-        public bool Create(CreateUserViewModel viewModel)
+        public long Create(CreateUserViewModel viewModel)
         {
             var user = new User(viewModel.Username, viewModel.Password, viewModel.Name, viewModel.BirthDate);
             return _userRepository.Create(user);
