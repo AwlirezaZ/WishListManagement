@@ -199,6 +199,10 @@
     <Content Include="Views\User\CreateUser.cshtml" />
     <Content Include="Views\User\UserInfo.cshtml" />
     <Content Include="Views\User\EditUser.cshtml" />
+    <Content Include="Views\WishListItem\CreateWishList.cshtml" />
+    <Content Include="Views\WishListItem\GetWishListInfo.cshtml" />
+    <Content Include="Views\WishListItem\GetWishListItemsList.cshtml" />
+    <Content Include="Views\WishListItem\EditWishListItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

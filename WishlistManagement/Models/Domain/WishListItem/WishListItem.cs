@@ -1,4 +1,6 @@
-﻿namespace WishListManagement.Models.Domain.WishListItem
+﻿using System;
+
+namespace WishListManagement.Models.Domain.WishListItem
 {
     public class WishListItem : BaseEntity.BaseEntity
 
@@ -9,6 +11,8 @@
             RoughPrice = roughPrice;
             Priority = priority;
             UserId = userId;
+            CreatedDateTime = DateTime.Now;
+            ModifiedDateTime = DateTime.Now;
         }
         public string WishListItemDescription { get; private set; }
         public decimal RoughPrice { get; private set; }
@@ -22,5 +26,6 @@
             RoughPrice = roughPrice;
             Priority = priority;
         }
+        private WishListItem(){}
     }
 }

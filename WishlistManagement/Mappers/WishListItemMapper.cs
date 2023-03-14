@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using WishListManagement.Models.Domain.WishListItem;
+using WishListManagement.Models.ViewModels.User;
 using WishListManagement.Models.ViewModels.WishListItem;
 
 namespace WishListManagement.Mappers
@@ -14,10 +15,12 @@ namespace WishListManagement.Mappers
         {
             return new WishListItemViewModel()
             {
+
                 Id = wishListItem.Id,
+                WishListItemDescription = wishListItem.WishListItemDescription,
                 Priority = wishListItem.Priority,
                 RoughPrice = wishListItem.RoughPrice,
-                User = UserMapper.Map(wishListItem.User),
+                User =  wishListItem.User != null? UserMapper.Map(wishListItem.User):new UserViewModel(),
                 UserId = wishListItem.UserId
             };
         }

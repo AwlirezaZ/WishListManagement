@@ -30,7 +30,7 @@ namespace WishListManagement.Services
             return WishListItemMapper.Map(wishListItem);
         }
 
-        public bool DeleteWishListItem(long id)
+        public long DeleteWishListItem(long id)
         {
             return _repository.Delete(id);
         }

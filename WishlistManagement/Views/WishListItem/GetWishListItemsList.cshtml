@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WishListManagement.Models.ViewModels.WishListItem.WishListItemViewModel>
+
+@{
+    ViewBag.Title = "GetWishListItemsList";
+}
+
+<h2>GetWishListItemsList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateWishList")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WishListItemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoughPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Priority)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WishListItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoughPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Priority)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditWishListItem", new { id=item.Id }) |
+            @Html.ActionLink("Details", "GetWishListInfo", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteWishListItem", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

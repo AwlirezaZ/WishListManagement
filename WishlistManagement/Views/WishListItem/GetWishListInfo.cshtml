@@ -1,0 +1,50 @@
+﻿@model WishListManagement.Models.ViewModels.WishListItem.WishListItemViewModel
+
+@{
+    ViewBag.Title = "GetWishListInfo";
+}
+
+<h2>GetWishListInfo</h2>
+
+<div>
+    <h4>WishListItemViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WishListItemDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WishListItemDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoughPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoughPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditWishListItem", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "GetWishListItemsList" , new {userId = Model.UserId})
+</p>

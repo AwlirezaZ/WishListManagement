@@ -16,27 +16,33 @@ namespace WishListManagement.Repositories
             db = new WishListManagementDbContext();
         }
 
-        public bool Create(WishListItem wishListItem)
+        public long Create(WishListItem wishListItem)
         {
             db.WishListItems.Add(wishListItem);
-            return true;
+            db.SaveChanges();
+
+            return wishListItem.Id;
         }
 
-        public bool Delete(long id)
+        public long Delete(long id)
         {
-             db.WishListItems.Remove(GetById(id));
-             return true;
+            var entity = GetById(id);
+             db.WishListItems.Remove(entity);
+             db.SaveChanges();
+
+            return entity.UserId;
         }
 
         public bool Update(WishListItem wishListItem)
         {
             db.Entry(wishListItem).State = EntityState.Modified;
+            db.SaveChanges();
             return true;
         }
 
         public WishListItem GetById(long id)
         {
-            return db.WishListItems.Find(id);
+            return db.WishListItems.Include(a => a.User).SingleOrDefault(a => a.Id ==id);
         }
 
         public List<WishListItem> GetWishListItemsByUserId(long userId)
