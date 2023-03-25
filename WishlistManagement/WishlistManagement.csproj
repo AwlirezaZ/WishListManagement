@@ -133,6 +133,7 @@
     <Compile Include="Core\Mapping\BaseEntityMapping\BaseEntityMapping.cs" />
     <Compile Include="Core\Mapping\UserMapping\UserMapping.cs" />
     <Compile Include="Core\Mapping\WishListMapping\WishListMapping.cs" />
+    <Compile Include="Core\Mapping\WishList\WishListMapping.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\WishListItemMapper.cs" />
     <Compile Include="Migrations\202303121032427_Test-If-Its-Work.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Domain\BaseEntity\BaseEntity.cs" />
     <Compile Include="Models\Domain\User\User.cs" />
+    <Compile Include="Models\Domain\WishList\WishList.cs" />
     <Compile Include="Models\Domain\WishListItem\WishListItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

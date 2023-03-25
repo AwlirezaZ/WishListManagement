@@ -17,7 +17,7 @@ namespace WishListManagement.Mappers
             {
 
                 Id = wishListItem.Id,
-                WishListItemDescription = wishListItem.WishListItemDescription,
+                WishListItemDescription = wishListItem.Title,
                 Priority = wishListItem.Priority,
                 RoughPrice = wishListItem.RoughPrice,
                 User =  wishListItem.User != null? UserMapper.Map(wishListItem.User):new UserViewModel(),

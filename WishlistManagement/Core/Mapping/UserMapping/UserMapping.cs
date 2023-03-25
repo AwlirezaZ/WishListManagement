@@ -14,7 +14,7 @@ namespace WishListManagement.Core.Mapping.UserMapping
             Property(a => a.Password).IsRequired();
             Property(a => a.Name).IsOptional();
             Property(a => a.BirthDate).IsOptional();
-            HasMany(a => a.WishList).WithRequired(a => a.User).HasForeignKey(a => a.UserId);
+            HasMany(a => a.WishLists).WithRequired(a => a.User).HasForeignKey(a => a.UserId);
         }
     }
 }

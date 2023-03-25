@@ -30,7 +30,7 @@ namespace WishListManagement.Repositories
              db.WishListItems.Remove(entity);
              db.SaveChanges();
 
-            return entity.UserId;
+            return entity.WishListId;
         }
 
         public bool Update(WishListItem wishListItem)
@@ -42,12 +42,12 @@ namespace WishListManagement.Repositories
 
         public WishListItem GetById(long id)
         {
-            return db.WishListItems.Include(a => a.User).SingleOrDefault(a => a.Id ==id);
+            return db.WishListItems.Include(a => a.WishList).SingleOrDefault(a => a.Id ==id);
         }
 
-        public List<WishListItem> GetWishListItemsByUserId(long userId)
+        public List<WishListItem> GetWishListItemsByUserId(long wishListId)
         {
-            return db.WishListItems.Where(a => a.UserId == userId).ToList();
+            return db.WishListItems.Where(a => a.WishListId == wishListId).ToList();
         }
 
     }

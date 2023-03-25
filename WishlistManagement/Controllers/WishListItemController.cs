@@ -51,9 +51,9 @@ namespace WishListManagement.Controllers
             return RedirectToAction("GetWishListItemsList", new { userId });
         }
 
-        public ActionResult GetWishListItemsList(long userId)
+        public ActionResult GetWishListItemsList(long wishListId)
         {
-            var wishListItems = _service.GetWishListItemsByUserId(userId);
+            var wishListItems = _service.GetWishListItemsByUserId(wishListId);
             return View(wishListItems);
         }
     }

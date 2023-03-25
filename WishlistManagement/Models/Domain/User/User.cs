@@ -9,7 +9,7 @@ namespace WishListManagement.Models.Domain.User
         public string Password { get; private set; }
         public string Name { get; private set; }
         public DateTime? BirthDate { get; private set; }
-        public List<WishListItem.WishListItem> WishList { get; private set; }
+        public List<WishList.WishList> WishLists { get; private set; }
 
         private User()
         {

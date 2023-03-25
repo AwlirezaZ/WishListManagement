@@ -43,9 +43,9 @@ namespace WishListManagement.Services
             return _repository.Update(wishListItem);
         }
 
-        public List<WishListItemViewModel> GetWishListItemsByUserId(long userId)
+        public List<WishListItemViewModel> GetWishListItemsByUserId(long wishListId)
         {
-            var wishListItems = _repository.GetWishListItemsByUserId(userId);
+            var wishListItems = _repository.GetWishListItemsByUserId(wishListId);
             return WishListItemMapper.Map(wishListItems);
         }
     }

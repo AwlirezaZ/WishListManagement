@@ -10,7 +10,7 @@ namespace WishListManagement.Core.Mapping.WishListMapping
         {
             ToTable("WishListItems").HasKey(a => a.Id)
                 .Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(a => a.WishListItemDescription).IsRequired();
+            Property(a => a.Title).IsRequired();
             Property(a => a.Priority).IsOptional();
             Property(a => a.RoughPrice).IsOptional();
         }
