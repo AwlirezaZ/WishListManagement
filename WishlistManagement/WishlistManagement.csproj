@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Controllers\WishListItemController.cs" />
     <Compile Include="Core\DbContext\WishListManagementDbContext.cs" />
     <Compile Include="Core\Mapping\BaseEntityMapping\BaseEntityMapping.cs" />
@@ -155,13 +156,17 @@
     <Compile Include="Models\ViewModels\WishListItem\CreateWishListItemViewModel.cs" />
     <Compile Include="Models\ViewModels\WishListItem\ModifyWishListItemViewModel.cs" />
     <Compile Include="Models\ViewModels\WishListItem\WishListItemViewModel.cs" />
+    <Compile Include="Models\ViewModels\WishList\CreateWishListViewModel.cs" />
+    <Compile Include="Models\ViewModels\WishList\ModifyWishListViewModel.cs" />
     <Compile Include="Models\ViewModels\WishList\WishListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\WishListItemRepository.cs" />
+    <Compile Include="Repositories\WishListRepository.cs" />
     <Compile Include="Services\BaseEntityService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\WishListItemService.cs" />
+    <Compile Include="Services\WishListService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -207,6 +212,11 @@
     <Content Include="Views\WishListItem\GetWishListInfo.cshtml" />
     <Content Include="Views\WishListItem\GetWishListItemsList.cshtml" />
     <Content Include="Views\WishListItem\EditWishListItem.cshtml" />
+    <Content Include="Views\WishList\Create.cshtml" />
+    <Content Include="Views\WishList\Delete.cshtml" />
+    <Content Include="Views\WishList\Details.cshtml" />
+    <Content Include="Views\WishList\Index.cshtml" />
+    <Content Include="Views\WishList\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

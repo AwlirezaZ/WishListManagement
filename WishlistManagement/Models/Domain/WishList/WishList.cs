@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity.Migrations.Model;
 
 namespace WishListManagement.Models.Domain.WishList
 {
@@ -7,9 +8,24 @@ namespace WishListManagement.Models.Domain.WishList
         public string Title { get; private set; }
         public string Description { get; private set; }
 
-        public List<WishListItem.WishListItem> WishListItems { get; set; }
-        public User.User User { get; set; }
-        public long UserId { get; set; }
+        public List<WishListItem.WishListItem> WishListItems { get; private set; }
+        public User.User User { get; private set; }
+        public long UserId { get; private set; }
         //public List<long> AllowedUserIds { get; set; }
+        public WishList(string title, string description,long userId)
+        {
+            Title = title;
+            Description = description;
+            UserId = userId;
+        }
+        private WishList()
+        {
+        }
+
+        public void Update(string title, string description)
+        {
+            Title = title;
+            Description = description;
+        }
     }
 }
