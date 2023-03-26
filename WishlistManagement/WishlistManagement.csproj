@@ -133,7 +133,7 @@
     <Compile Include="Core\DbContext\WishListManagementDbContext.cs" />
     <Compile Include="Core\Mapping\BaseEntityMapping\BaseEntityMapping.cs" />
     <Compile Include="Core\Mapping\UserMapping\UserMapping.cs" />
-    <Compile Include="Core\Mapping\WishListMapping\WishListMapping.cs" />
+    <Compile Include="Core\Mapping\WishListMapping\WishListItemMapping.cs" />
     <Compile Include="Core\Mapping\WishList\WishListMapping.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\WishListItemMapper.cs" />
@@ -141,6 +141,10 @@
     <Compile Include="Migrations\202303121032427_Test-If-Its-Work.cs" />
     <Compile Include="Migrations\202303121032427_Test-If-Its-Work.Designer.cs">
       <DependentUpon>202303121032427_Test-If-Its-Work.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202303261131052_add wishlist class.cs" />
+    <Compile Include="Migrations\202303261131052_add wishlist class.Designer.cs">
+      <DependentUpon>202303261131052_add wishlist class.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Domain\BaseEntity\BaseEntity.cs" />
@@ -237,6 +241,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202303121032427_Test-If-Its-Work.resx">
       <DependentUpon>202303121032427_Test-If-Its-Work.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303261131052_add wishlist class.resx">
+      <DependentUpon>202303261131052_add wishlist class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

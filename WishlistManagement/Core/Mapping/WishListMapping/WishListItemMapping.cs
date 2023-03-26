@@ -4,9 +4,9 @@ using WishListManagement.Models.Domain.WishListItem;
 
 namespace WishListManagement.Core.Mapping.WishListMapping
 {
-    public class WishListMapping : EntityTypeConfiguration<WishListItem>
+    public class WishListItemMapping : EntityTypeConfiguration<WishListItem>
     {
-        public WishListMapping()
+        public WishListItemMapping()
         {
             ToTable("WishListItems").HasKey(a => a.Id)
                 .Property(a => a.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
