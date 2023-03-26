@@ -27,6 +27,7 @@ namespace WishListManagement.Services
         {
             var wishList = _repository.GetById(viewModel.Id);
             wishList.Update(viewModel.Title,viewModel.Description);
+            _repository.Update(wishList);
             return true;
         }
         public long Delete(long wishListId)

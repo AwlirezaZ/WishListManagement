@@ -20,7 +20,7 @@ namespace WishListManagement.Mappers
                 Description = wishList.Description,
                 Title = wishList.Title,
                 User = wishList.User != null ? UserMapper.Map(wishList.User) : new UserViewModel(),
-                UserId = wishList.Id,
+                UserId = wishList.UserId,
                 WishListItems = wishList.WishListItems != null
                     ? WishListItemMapper.Map(wishList.WishListItems)
                     : new List<WishListItemViewModel>()

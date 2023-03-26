@@ -25,7 +25,7 @@ namespace WishListManagement.Repositories
 
         public long Delete(long id)
         {
-            var entity = GetById(id);
+            var entity = GetSummaryById(id);
             db.WishLists.Remove(entity);
             db.SaveChanges();
 
@@ -44,6 +44,11 @@ namespace WishListManagement.Repositories
             return db.WishLists
                 .Include(a => a.User)
                 .Include(a => a.WishListItems)
+                .SingleOrDefault(a => a.Id == id);
+        }
+        public WishList GetSummaryById(long id)
+        {
+            return db.WishLists
                 .SingleOrDefault(a => a.Id == id);
         }
 

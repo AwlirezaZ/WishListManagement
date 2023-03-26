@@ -52,8 +52,6 @@ namespace WishListManagement.Controllers
             _service.Edit(wishList);
             return RedirectToAction("Details",new {id =wishList.Id});
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Delete(long id)
         {
             var userId = _service.Delete(id);
