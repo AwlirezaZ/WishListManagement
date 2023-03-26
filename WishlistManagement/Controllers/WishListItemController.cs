@@ -17,13 +17,13 @@ namespace WishListManagement.Controllers
             _service = new WishListItemService();
         }
 
-        public ActionResult CreateWishList()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult CreateWishList(CreateWishListItemViewModel viewModel)
+        public ActionResult Create(CreateWishListItemViewModel viewModel)
         {
             var id = _service.CreateWishListItem(viewModel);
             return RedirectToAction("GetWishListInfo", new { id });
@@ -47,8 +47,8 @@ namespace WishListManagement.Controllers
         }
         public ActionResult DeleteWishListItem(long id)
         {
-            var userId = _service.DeleteWishListItem(id);
-            return RedirectToAction("GetWishListItemsList", new { userId });
+            var wishListId = _service.DeleteWishListItem(id);
+            return RedirectToAction("GetWishListItemsList", new { wishListId});
         }
 
         public ActionResult GetWishListItemsList(long wishListId)

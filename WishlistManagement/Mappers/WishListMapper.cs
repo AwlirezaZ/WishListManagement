@@ -26,10 +26,22 @@ namespace WishListManagement.Mappers
                     : new List<WishListItemViewModel>()
             };
         }
+       
 
         public static List<WishListViewModel> Map(List<WishList> wishLists)
         {
             return wishLists.Select(Map).ToList();
+        }
+        public static WishListViewModel MapFromWishListItem(WishList wishList)
+        {
+            return new WishListViewModel()
+            {
+                Id = wishList.Id,
+                Description = wishList.Description,
+                Title = wishList.Title,
+                User = wishList.User != null ? UserMapper.Map(wishList.User) : new UserViewModel(),
+                UserId = wishList.UserId,
+            };
         }
     }
 }

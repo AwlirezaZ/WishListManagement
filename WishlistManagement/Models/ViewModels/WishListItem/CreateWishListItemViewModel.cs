@@ -10,6 +10,6 @@ namespace WishListManagement.Models.ViewModels.WishListItem
         public string WishListItemDescription { get; set; }
         public decimal RoughPrice { get; set; }
         public int Priority { get; set; }
-        public long UserId { get; set; }
+        public long WishListId { get; set; }
     }
 }

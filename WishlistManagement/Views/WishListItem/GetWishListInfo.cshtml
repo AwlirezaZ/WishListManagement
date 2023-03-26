@@ -34,17 +34,9 @@
             @Html.DisplayFor(model => model.Priority)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "EditWishListItem", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "GetWishListItemsList" , new {userId = Model.UserId})
+    @Html.ActionLink("Back to List", "GetWishListItemsList" , new {wishListId = Model.WishListId})
 </p>

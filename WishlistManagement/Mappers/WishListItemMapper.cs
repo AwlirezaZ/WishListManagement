@@ -21,7 +21,7 @@ namespace WishListManagement.Mappers
                 WishListItemDescription = wishListItem.Title,
                 Priority = wishListItem.Priority,
                 RoughPrice = wishListItem.RoughPrice,
-                WishList =  wishListItem.WishList != null? WishListMapper.Map(wishListItem.WishList):new WishListViewModel(),
+                WishList =  wishListItem.WishList != null? WishListMapper.MapFromWishListItem(wishListItem.WishList):new WishListViewModel(),
                 WishListId = wishListItem.WishListId
             };
         }
