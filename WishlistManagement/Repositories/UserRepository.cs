@@ -35,5 +35,14 @@ namespace WishListManagement.Repositories
 
             return true;
         }
+        public string GetPasswordByUsername(string username)
+        {
+            return db.Users.FirstOrDefault(a => a.Username == username)?.Password;
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            return db.Users.FirstOrDefault(a => a.Username == username);
+        }
     }
 }

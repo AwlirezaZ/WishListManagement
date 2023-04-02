@@ -13,6 +13,7 @@ using WishListManagement.Services;
 
 namespace WishListManagement.Controllers
 {
+    [Authorize]
     public class WishListController : Controller
     {
         private readonly WishListService _service;
