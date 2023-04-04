@@ -17,9 +17,11 @@ namespace WishListManagement.Controllers
     public class WishListController : Controller
     {
         private readonly WishListService _service;
+        private readonly UserService _userService;
         public WishListController()
         {
             _service = new WishListService();
+            _userService = new UserService();
         }
         public ActionResult Index(long userId)
         {
@@ -39,6 +41,7 @@ namespace WishListManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CreateWishListViewModel wishList)
         {
+            wishList.UserId = _userService.GetUserByUsername(HttpContext.User.Identity.Name).Id;
             var createdWishListId = _service.Create(wishList);
             return RedirectToAction("Details",new { id = createdWishListId});
         }
@@ -56,7 +59,7 @@ namespace WishListManagement.Controllers
         public ActionResult Delete(long id)
         {
             var userId = _service.Delete(id);
-            return RedirectToAction("Index",new{userId = userId});
+            return RedirectToAction("Index",new{ userId});
         }
     }
 }

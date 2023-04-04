@@ -8,6 +8,7 @@ using WishListManagement.Services;
 
 namespace WishListManagement.Controllers
 {
+    [Authorize]
     public class WishListItemController : Controller
     {
         private readonly WishListItemService _service;
