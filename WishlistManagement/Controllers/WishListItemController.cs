@@ -18,7 +18,7 @@ namespace WishListManagement.Controllers
             _service = new WishListItemService();
         }
 
-        public ActionResult Create()
+        public ActionResult Create(long wishListId)
         {
             return View();
         }

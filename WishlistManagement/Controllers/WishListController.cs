@@ -23,9 +23,9 @@ namespace WishListManagement.Controllers
             _service = new WishListService();
             _userService = new UserService();
         }
-        public ActionResult Index(long userId)
+        public ActionResult Index(long id)
         {
-            var wishLists = _service.GetAllByUserId(userId);
+            var wishLists = _service.GetAllByUserId(id);
             return View(wishLists);
         }
         public ActionResult Details(long id)
@@ -59,7 +59,7 @@ namespace WishListManagement.Controllers
         public ActionResult Delete(long id)
         {
             var userId = _service.Delete(id);
-            return RedirectToAction("Index",new{ userId});
+            return RedirectToAction("Index",new{ id = userId});
         }
     }
 }

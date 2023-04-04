@@ -25,12 +25,13 @@ namespace WishListManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginUserViewModel user)
+        public ActionResult Login(LoginUserViewModel user, string returnUrl)
         {
             var savedUser = _service.GetUserByUsername(user.Username);
             var userIsRegistered = _service.UserIsRegistered(savedUser.Password, user.Password);
             if (userIsRegistered)
                 FormsAuthentication.SetAuthCookie(user.Username, false);
+            if (returnUrl != null) return Redirect(returnUrl);
             return RedirectToAction("UserInfo", "User", new { id = savedUser.Id });
         }
         public ActionResult LogOut()
