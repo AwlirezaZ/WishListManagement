@@ -16,7 +16,7 @@ namespace WishListManagement.Mappers
                 Id = user.Id,
                 Username = user.Username,
                 Password = user.Password,
-                BirthDate = user.BirthDate,
+                BirthDate = user.BirthDate?.ToShortDateString(),
                 Name = user.Name
             };
         }
