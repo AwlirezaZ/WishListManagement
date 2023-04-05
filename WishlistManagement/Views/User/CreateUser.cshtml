@@ -1,8 +1,6 @@
 ﻿@model WishListManagement.Models.ViewModels.User.CreateUserViewModel
 
-@{
-    ViewBag.Title = "CreateUser";
-}
+
 
 
 
@@ -11,15 +9,13 @@
 <div id="particle"></div>
 <div id="overlay">
     <div class="form-back">
-        <h2>CreateUser</h2>
+        <h2 class="my-form-title">CreateUser</h2>
 
         <div class="in-form-back">
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
-
                 <div class="form-horizontal">
-                    <h4>User</h4>
                     <hr />
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
@@ -57,7 +53,7 @@
             }
         </div>
         <div>
-            @Html.ActionLink("Back to List", "")
+            @Html.ActionLink("Back to List", "",null,new {@class ="my-form-btn"})
         </div>
     </div>
 </div>
