@@ -8,6 +8,7 @@ using WishListManagement.Services;
 
 namespace WishListManagement.Controllers
 {
+    [Authorize]
     public class WishListItemController : Controller
     {
         private readonly WishListItemService _service;
@@ -17,7 +18,7 @@ namespace WishListManagement.Controllers
             _service = new WishListItemService();
         }
 
-        public ActionResult Create()
+        public ActionResult Create(long wishListId)
         {
             return View();
         }
