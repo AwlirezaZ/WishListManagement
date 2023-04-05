@@ -1,14 +1,13 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background: linear-gradient(to right, rgb(29, 43, 100), rgb(248, 205, 218));
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    background: #ffffffab;
+    background: #fff;
     margin-top: 50px;
 }
 
@@ -24,6 +23,77 @@ input,
 select,
 textarea {
     max-width: 280px;
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #a9a9a9;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+#particle {
+    background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#overlay {
+    position: relative;
 }
 
 
+.form-back {
+    background-image: url(images/formback.jpg);
+    background-size: cover;
+    padding: 20px;
+}
+
+input {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #004b8f !important;
+    border-radius: 0 !important;
+}
+
+
+.h1, h1 {
+    font-size: 20px !important;
+}
+
+.h2, h2 {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+.h3, h3 {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.h4, h4 {
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+.h5, h5 {
+    font-size: 14px !important;
+    font-weight: bold;
+}
+
+.h6, h6 {
+    font-size: 12px !important;
+    font-weight: bold;
+}
+input.btn.btn-default {
+    background: #004b8f !important;
+    border: 2px solid #004b8f !important;
+    color: #fff;
+    border-radius: 5px !important;
+}
