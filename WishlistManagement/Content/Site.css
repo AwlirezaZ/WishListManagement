@@ -34,7 +34,7 @@ textarea {
     transition: all 0.3s ease;
 }
 #particle {
-    background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    background: radial-gradient(circle at bottom, navy 0, #26007B 50%, black 100%);
     position: fixed;
     top: 0;
     right: 0;
@@ -47,22 +47,26 @@ textarea {
     position: relative;
 }
 
-
 .form-back {
-    background-image: url(images/formback.jpg);
-    background-size: cover;
     padding: 20px;
+    background-color: #000a20;
+    width: 400px;
+    margin: auto;
 }
 
 input {
-    background: transparent !important;
-    border: none !important;
+    background: #93b4ff !important;
     box-shadow: none !important;
-    border-bottom: 2px solid #004b8f !important;
-    border-radius: 0 !important;
+    border: 1px solid navy !important;
+    border-radius: 25px !important;
+    margin: auto;
+    padding: 20px 10px !important;
+    color: #000 !important
 }
 
-
+label.control-label {
+    color: #e9e9e9!important;
+}
 .h1, h1 {
     font-size: 20px !important;
 }
@@ -92,8 +96,28 @@ input {
     font-weight: bold;
 }
 input.btn.btn-default {
-    background: #004b8f !important;
-    border: 2px solid #004b8f !important;
+    background: #5555ff !important;
+    border: 2px solid navy !important;
     color: #fff;
-    border-radius: 5px !important;
+    border-radius: 25px !important;
+    transition: 0.3s !important;
+    padding-bottom: 28px !important;
+    padding-top: 11px !important;
+}
+    input.btn.btn-default:hover {
+        background: #cb59ff !important;
+        transition: 0.3s !important
+    }
+
+.m-auto {
+    margin: auto !important;
+    text-align: center !important
+}
+
+input::placeholder {
+    color: #000!important
+}
+
+.d-flex {
+    display: flex
 }
