@@ -1,4 +1,5 @@
-﻿@model WishListManagement.Models.ViewModels.User.UserViewModel
+﻿@using WishListManagement.Models.ViewModels.User
+@model WishListManagement.Models.ViewModels.User.UserViewModel
 
 @{
     ViewBag.Title = "UserInfo";
@@ -38,5 +39,5 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "EditUser", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Change Password","ChangePassword",new UserViewModel(){Id = Model.Id,Password = Model.Password})
 </p>

@@ -17,5 +17,6 @@ namespace WishListManagement.Core.DbContext
             modelBuilder.Configurations.AddFromAssembly(typeof(WishListManagementDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }

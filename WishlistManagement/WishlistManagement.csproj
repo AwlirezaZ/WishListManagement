@@ -155,6 +155,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\User\ChangePasswordUserViewModel.cs" />
     <Compile Include="Models\ViewModels\User\CreateUserViewModel.cs" />
     <Compile Include="Models\ViewModels\User\LoginUserViewModel.cs" />
     <Compile Include="Models\ViewModels\User\ModifyUserViewModel.cs" />
@@ -227,6 +228,7 @@
     <Content Include="Views\WishList\Index.cshtml" />
     <Content Include="Views\WishList\Edit.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
