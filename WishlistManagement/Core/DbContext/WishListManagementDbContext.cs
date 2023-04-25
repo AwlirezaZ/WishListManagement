@@ -1,4 +1,6 @@
 ﻿using System.Data.Entity;
+using System.Linq;
+using System.Web;
 using WishListManagement.Models.Domain.BaseEntity;
 using WishListManagement.Models.Domain.User;
 using WishListManagement.Models.Domain.WishList;
@@ -12,6 +14,11 @@ namespace WishListManagement.Core.DbContext
         public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<WishListItem> WishListItems { get; set; }
         public DbSet<WishList> WishLists { get; set; }
+
+        public IQueryable<WishList> FilteredWishLists
+        {
+            get { return WishLists.Where(a => a.UserId == 1); }
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.AddFromAssembly(typeof(WishListManagementDbContext).Assembly);
