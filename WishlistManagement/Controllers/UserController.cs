@@ -31,8 +31,8 @@ namespace WishListManagement.Controllers
         [HttpPost]
         public ActionResult CreateUser(CreateUserViewModel user)
         {
-            var id = _userService.Create(user);
-            return RedirectToAction("UserInfo", new { id });
+            _userService.Create(user);
+            return RedirectToAction("UserInfo");
         }
         [Authorize]
         public ActionResult UserInfo()
@@ -42,11 +42,10 @@ namespace WishListManagement.Controllers
             return View(userViewModel);
         }
         [Authorize]
-        public ActionResult EditUser(long id)
+        public ActionResult EditUser()
         {
-            var userViewModel = _userService.GetUserById(id);
-            if (userViewModel.Username != HttpContext.User.Identity.Name)
-                throw new UnauthorizedAccessException("you are not allowed to show other users' information");
+            var userId = AuthenticationHelper.GetLoggedInUserId();
+            var userViewModel = _userService.GetUserById(userId);
             return View(userViewModel);
         }
         [Authorize]
@@ -54,7 +53,7 @@ namespace WishListManagement.Controllers
         public ActionResult EditUser(ModifyUserViewModel user)
         {
             _userService.Modify(user);
-            return RedirectToAction("UserInfo", new { id = user.Id });
+            return RedirectToAction("UserInfo");
         }
 
         [Authorize]
@@ -73,7 +72,7 @@ namespace WishListManagement.Controllers
             {
                 if (user == null) throw new ArgumentNullException();
                 _userService.UpdatePassword(user);
-                return RedirectToAction("UserInfo", new { id = user.Id });
+                return RedirectToAction("UserInfo");
             }
             return View(user);
         }
