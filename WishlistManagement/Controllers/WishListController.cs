@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WishListManagement.Core.DbContext;
+using WishListManagement.Helpers;
 using WishListManagement.Models.Domain.WishList;
 using WishListManagement.Models.ViewModels.WishList;
 using WishListManagement.Services;
@@ -17,15 +18,14 @@ namespace WishListManagement.Controllers
     public class WishListController : Controller
     {
         private readonly WishListService _service;
-        private readonly UserService _userService;
         public WishListController()
         {
             _service = new WishListService();
-            _userService = new UserService();
         }
-        public ActionResult Index(long id)
+        public ActionResult Index()
         {
-            var wishLists = _service.GetAllByUserId(id);
+            var userId = AuthenticationHelper.GetLoggedInUserId();
+            var wishLists = _service.GetAllByUserId(userId);
             return View(wishLists);
         }
         public ActionResult Details(long id)
@@ -41,7 +41,7 @@ namespace WishListManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CreateWishListViewModel wishList)
         {
-            wishList.UserId = _userService.GetUserByUsername(HttpContext.User.Identity.Name).Id;
+            wishList.UserId = AuthenticationHelper.GetLoggedInUserId();
             var createdWishListId = _service.Create(wishList);
             return RedirectToAction("Details",new { id = createdWishListId});
         }
@@ -59,7 +59,7 @@ namespace WishListManagement.Controllers
         public ActionResult Delete(long id)
         {
             var userId = _service.Delete(id);
-            return RedirectToAction("Index",new{ id = userId});
+            return RedirectToAction("Index");
         }
     }
 }
