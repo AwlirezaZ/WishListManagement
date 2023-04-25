@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using WishListManagement.Helpers;
 using WishListManagement.Models.ViewModels.User;
 using WishListManagement.Services;
 
@@ -28,11 +29,11 @@ namespace WishListManagement.Controllers
         public ActionResult Login(LoginUserViewModel user, string returnUrl)
         {
             var savedUser = _service.GetUserByUsername(user.Username);
-            var userIsRegistered = _service.UserIsRegistered(savedUser.Password, user.Password);
+            var userIsRegistered = AuthenticationHelper.UserIsRegistered(savedUser.Password, user.Password);
             if (userIsRegistered)
                 FormsAuthentication.SetAuthCookie($"{savedUser.Id},{user.Username}", false);
             if (returnUrl != null) return Redirect(returnUrl);
-            return RedirectToAction("UserInfo", "User", new { id = savedUser.Id });
+            return RedirectToAction("UserInfo", "User");
         }
         public ActionResult LogOut()
         {
