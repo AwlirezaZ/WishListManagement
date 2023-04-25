@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WishListManagement.Core.DbContext;
+using WishListManagement.Helpers;
 using WishListManagement.Models.ViewModels.User;
 using WishListManagement.Services;
 
@@ -34,11 +35,10 @@ namespace WishListManagement.Controllers
             return RedirectToAction("UserInfo", new { id });
         }
         [Authorize]
-        public ActionResult UserInfo(long id)
+        public ActionResult UserInfo()
         {
-            var userViewModel = _userService.GetUserById(id);
-            if (userViewModel.Username != HttpContext.User.Identity.Name)
-                throw new UnauthorizedAccessException("we are not allowed to show other users' information to you");
+            var userId = AuthenticationHelper.GetLoggedInUserId();
+            var userViewModel = _userService.GetUserById(userId);
             return View(userViewModel);
         }
         [Authorize]

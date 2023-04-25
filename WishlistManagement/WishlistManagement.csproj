@@ -136,6 +136,7 @@
     <Compile Include="Core\Mapping\UserMapping\UserMapping.cs" />
     <Compile Include="Core\Mapping\WishListMapping\WishListItemMapping.cs" />
     <Compile Include="Core\Mapping\WishList\WishListMapping.cs" />
+    <Compile Include="Helpers\AuthenticationHelper.cs" />
     <Compile Include="Mappers\UserMapper.cs" />
     <Compile Include="Mappers\WishListItemMapper.cs" />
     <Compile Include="Mappers\WishListMapper.cs" />
