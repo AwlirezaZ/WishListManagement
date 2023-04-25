@@ -32,5 +32,10 @@ namespace WishListManagement.Models.Domain.User
             BirthDate = birthDate;
             ModifiedDateTime = DateTime.Now;
         }
+
+        public void UpdatePassword(string newPassword)
+        {
+            Password = newPassword;
+        }
     }
 }

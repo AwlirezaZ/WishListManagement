@@ -39,6 +39,22 @@ namespace WishListManagement.Services
             _userRepository.Update(user);
             return true;
         }
+
+        public bool UpdatePassword(ChangePasswordUserViewModel userViewModel)
+        {
+            var user = _userRepository.GetUserById(userViewModel.Id);
+            CheckOldPasswordMatch(userViewModel.OldPassword,user.Password);
+            var hashedNewPassword = HashAndSaltPasswords(userViewModel.NewPassword);
+            user.UpdatePassword(hashedNewPassword);
+            return _userRepository.Update(user);
+        }
+
+        private void CheckOldPasswordMatch(string oldPassword, string hashedSavedOldPassword)
+        {
+            if (!UserIsRegistered(hashedSavedOldPassword,oldPassword))
+                throw new Exception();
+        }
+
         public string GetPasswordByUsername(string username)
         {
             return _userRepository.GetPasswordByUsername(username);
