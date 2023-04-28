@@ -11,7 +11,7 @@ using WishListManagement.Repositories;
 
 namespace WishListManagement.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private readonly UserRepository _userRepository;
 
@@ -54,11 +54,6 @@ namespace WishListManagement.Services
         {
             if (!AuthenticationHelper.UserIsRegistered(hashedSavedOldPassword,oldPassword))
                 throw new Exception();
-        }
-
-        public string GetPasswordByUsername(string username)
-        {
-            return _userRepository.GetPasswordByUsername(username);
         }
 
         public UserViewModel GetUserByUsername(string username)
