@@ -15,10 +15,11 @@ namespace WishListManagement.Core.DbContext
         public DbSet<BaseEntity> BaseEntities { get; set; }
         public DbSet<WishListItem> WishListItems { get; set; }
         public DbSet<WishList> WishLists { get; set; }
+        private long UserId => AuthenticationHelper.GetLoggedInUserId();
 
         public IQueryable<WishList> FilteredWishLists
         {
-            get { return WishLists.Where(a => a.UserId == AuthenticationHelper.GetLoggedInUserId()); }
+            get { return WishLists.Where(a => a.UserId == this.UserId); }
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

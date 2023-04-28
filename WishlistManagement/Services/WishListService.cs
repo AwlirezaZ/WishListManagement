@@ -40,9 +40,9 @@ namespace WishListManagement.Services
             return WishListMapper.Map(wishList);
         }
 
-        public List<WishListViewModel> GetAllByUserId(long userId)
+        public List<WishListViewModel> GetAllByUserId()
         {
-            var wishLists = _repository.GetWishListsByUserId(userId);
+            var wishLists = _repository.GetWishListsByUserId();
             return WishListMapper.Map(wishLists);
         }
     }

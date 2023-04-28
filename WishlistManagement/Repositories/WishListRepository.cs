@@ -41,20 +41,20 @@ namespace WishListManagement.Repositories
 
         public WishList GetById(long id)
         {
-            return db.WishLists
+            return db.FilteredWishLists
                 .Include(a => a.User)
                 .Include(a => a.WishListItems)
                 .SingleOrDefault(a => a.Id == id);
         }
         public WishList GetSummaryById(long id)
         {
-            return db.WishLists
+            return db.FilteredWishLists
                 .SingleOrDefault(a => a.Id == id);
         }
 
-        public List<WishList> GetWishListsByUserId(long userId)
+        public List<WishList> GetWishListsByUserId()
         {
-            return db.WishLists.Where(a => a.UserId == userId).ToList();
+            return db.FilteredWishLists.ToList();
         }
     }
 }

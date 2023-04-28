@@ -24,8 +24,7 @@ namespace WishListManagement.Controllers
         }
         public ActionResult Index()
         {
-            var userId = AuthenticationHelper.GetLoggedInUserId();
-            var wishLists = _service.GetAllByUserId(userId);
+            var wishLists = _service.GetAllByUserId();
             return View(wishLists);
         }
         public ActionResult Details(long id)
