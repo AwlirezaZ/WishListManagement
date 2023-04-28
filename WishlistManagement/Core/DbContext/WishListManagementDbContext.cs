@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using WishListManagement.Helpers;
 using WishListManagement.Models.Domain.BaseEntity;
 using WishListManagement.Models.Domain.User;
 using WishListManagement.Models.Domain.WishList;
@@ -17,7 +18,7 @@ namespace WishListManagement.Core.DbContext
 
         public IQueryable<WishList> FilteredWishLists
         {
-            get { return WishLists.Where(a => a.UserId == 1); }
+            get { return WishLists.Where(a => a.UserId == AuthenticationHelper.GetLoggedInUserId()); }
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
