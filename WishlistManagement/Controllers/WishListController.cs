@@ -32,6 +32,13 @@ namespace WishListManagement.Controllers
             var wishList = _service.GetById(id);
             return View(wishList);
         }
+
+        [HttpPost]
+        public ActionResult Details(WishListViewModel viewModel)
+        {
+            //_service.UpdateWithItem(viewModel);
+            return null;
+        }
         public ActionResult Create()
         {
             return View();

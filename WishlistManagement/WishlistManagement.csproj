@@ -255,11 +255,11 @@
     <Content Include="Views\WishListItem\EditWishListItem.cshtml" />
     <Content Include="Views\WishList\Create.cshtml" />
     <Content Include="Views\WishList\Delete.cshtml" />
-    <Content Include="Views\WishList\Details.cshtml" />
     <Content Include="Views\WishList\Index.cshtml" />
     <Content Include="Views\WishList\Edit.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
     <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\WishList\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations.Model;
+using WishListManagement.Models.ViewModels.WishListItem;
 
 namespace WishListManagement.Models.Domain.WishList
 {
@@ -29,6 +30,11 @@ namespace WishListManagement.Models.Domain.WishList
             Title = title;
             Description = description;
             ModifiedDateTime = DateTime.Now;
+        }
+
+        public void UpdateItems(List<WishListItemViewModel> viewModelWishListItems)
+        {
+            throw new NotImplementedException();
         }
     }
 }

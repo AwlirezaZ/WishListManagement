@@ -6,28 +6,73 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>WishList</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>WishListViewModel</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.UserId)
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
+    @foreach (var item in Model.WishListItems)
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => item.WishListItemDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => item.WishListItemDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => item.WishListItemDescription, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => item.RoughPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => item.RoughPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => item.RoughPrice, "", new { @class = "text-danger" })
+            </div>
+        </div> 
+        <div class="form-group">
+            @Html.LabelFor(model => item.Priority, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => item.Priority, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => item.Priority, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index", new {userId = Model.UserId})
-</p>
+}
+
+<div>
+    @Html.ActionLink("Add Item","Create","WishListItem",new {wishListId = Model.Id},null)
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

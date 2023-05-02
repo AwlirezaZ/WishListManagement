@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using WishListManagement.Mappers;
 using WishListManagement.Models.Domain.WishList;
+using WishListManagement.Models.Domain.WishListItem;
 using WishListManagement.Models.ViewModels.WishList;
+using WishListManagement.Models.ViewModels.WishListItem;
 using WishListManagement.Repositories;
 
 namespace WishListManagement.Services
@@ -12,10 +14,12 @@ namespace WishListManagement.Services
     public class WishListService
     {
         private readonly WishListRepository _repository;
+        private readonly WishListItemRepository _itemRepository;
 
         public WishListService()
         {
             _repository = new WishListRepository();
+            _itemRepository = new WishListItemRepository();
         }
 
         public long Create(CreateWishListViewModel viewModel)
@@ -45,5 +49,21 @@ namespace WishListManagement.Services
             var wishLists = _repository.GetWishListsByUserId();
             return WishListMapper.Map(wishLists);
         }
+
+        //public bool UpdateWithItem(WishListViewModel viewModel)
+        //{
+        //    var wishList = _repository.GetById(viewModel.Id);
+        //    wishList.Update(viewModel.Title,viewModel.Description);
+        //    wishList.UpdateItems(viewModel.WishListItems);
+        //}
+
+        //private List<WishListItem> UpdateAllItems(List<WishListItemViewModel> items)
+        //{
+        //    var wishListItems = new List<WishListItem>();
+        //    foreach (var item in items)
+        //    {
+        //        wishListItems.Add(new  WishListItem());
+        //    }
+        //} 
     }
 }
