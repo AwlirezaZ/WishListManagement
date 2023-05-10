@@ -32,7 +32,7 @@ namespace WishListManagement.Repositories
             return entity.UserId;
         }
 
-        public bool Update(WishList wishList)
+        public bool Update()
         {
             var wishListItems = db.ChangeTracker.Entries().Where(a =>
                 a.State == EntityState.Modified).Select(a => a.Entity).OfType<WishListItem>().ToList();

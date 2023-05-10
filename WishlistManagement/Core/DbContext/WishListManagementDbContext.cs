@@ -19,7 +19,7 @@ namespace WishListManagement.Core.DbContext
 
         public IQueryable<WishList> FilteredWishLists
         {
-            get { return WishLists.Where(a => a.UserId == 4); }
+            get { return WishLists.Where(a => a.UserId == UserId); }
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

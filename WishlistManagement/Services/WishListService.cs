@@ -31,7 +31,7 @@ namespace WishListManagement.Services
         {
             var wishList = _repository.GetById(viewModel.Id);
             wishList.Update(viewModel.Title,viewModel.Description);
-            _repository.Update(wishList);
+            _repository.Update();
             return true;
         }
         public long Delete(long wishListId)
@@ -55,7 +55,7 @@ namespace WishListManagement.Services
             var wishList = _repository.GetById(viewModel.Id);
             wishList.Update(viewModel.Title, viewModel.Description);
             UpdateItems(viewModel, wishList);
-            return _repository.Update(wishList);
+            return _repository.Update();
 
         }
 
@@ -65,13 +65,6 @@ namespace WishListManagement.Services
             wishList.UpdateItems(wishListItems);
         }
 
-        //private List<WishListItem> UpdateAllItems(List<WishListItemViewModel> items)
-        //{
-        //    var wishListItems = new List<WishListItem>();
-        //    foreach (var item in items)
-        //    {
-        //        wishListItems.Add(new  WishListItem());
-        //    }
-        //} 
+        
     }
 }

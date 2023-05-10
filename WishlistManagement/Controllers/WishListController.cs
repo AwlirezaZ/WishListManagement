@@ -14,7 +14,7 @@ using WishListManagement.Services;
 
 namespace WishListManagement.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class WishListController : Controller
     {
         private readonly WishListService _service;
