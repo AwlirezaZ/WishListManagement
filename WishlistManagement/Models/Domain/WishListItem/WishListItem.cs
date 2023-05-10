@@ -10,7 +10,13 @@ namespace WishListManagement.Models.Domain.WishListItem
         public int Priority { get; private set; }
         public WishList.WishList WishList { get; private set; }
         public long WishListId { get; private set; }
-
+ public WishListItem(long id,string title, decimal roughPrice, int priority)
+        {
+            Title = title;
+            RoughPrice = roughPrice;
+            Priority = priority;
+            Id = id;
+        }
         public WishListItem(string title, decimal roughPrice, int priority, long wishListId)
         {
             Title = title;
@@ -26,6 +32,6 @@ namespace WishListManagement.Models.Domain.WishListItem
             RoughPrice = roughPrice;
             Priority = priority;
         }
-        private WishListItem(){}
+        public WishListItem(){}
     }
 }

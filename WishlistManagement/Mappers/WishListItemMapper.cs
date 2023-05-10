@@ -24,9 +24,19 @@ namespace WishListManagement.Mappers
                 WishList =  wishListItem.WishList != null? WishListMapper.MapFromWishListItem(wishListItem.WishList):new WishListViewModel(),
                 WishListId = wishListItem.WishListId
             };
+        } 
+        public static WishListItem Map(WishListItemViewModel wishListItem)
+        {
+            return new WishListItem(wishListItem.Id, wishListItem.WishListItemDescription, wishListItem.RoughPrice,
+                wishListItem.Priority);
+
         }
 
         public static List<WishListItemViewModel> Map(List<WishListItem> wishListItems)
+        {
+            return wishListItems.Select(Map).ToList();
+        }
+        public static List<WishListItem> Map(List<WishListItemViewModel> wishListItems)
         {
             return wishListItems.Select(Map).ToList();
         }

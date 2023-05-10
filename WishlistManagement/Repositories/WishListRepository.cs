@@ -34,7 +34,10 @@ namespace WishListManagement.Repositories
 
         public bool Update(WishList wishList)
         {
-            db.Entry(wishList).State = EntityState.Modified;
+            var wishListItems = db.ChangeTracker.Entries().Where(a =>
+                a.State == EntityState.Modified).Select(a => a.Entity).OfType<WishListItem>().ToList();
+            var deletedPackageHotel = wishListItems.Where(s => s.WishList == null).ToList();
+            deletedPackageHotel.ForEach(a => db.WishListItems.Remove(a));
             db.SaveChanges();
             return true;
         }

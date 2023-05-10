@@ -14,7 +14,7 @@ using WishListManagement.Services;
 
 namespace WishListManagement.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class WishListController : Controller
     {
         private readonly WishListService _service;
@@ -36,7 +36,7 @@ namespace WishListManagement.Controllers
         [HttpPost]
         public ActionResult Details(WishListViewModel viewModel)
         {
-            //_service.UpdateWithItem(viewModel);
+            _service.UpdateWithItem(viewModel);
             return null;
         }
         public ActionResult Create()

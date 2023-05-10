@@ -50,12 +50,20 @@ namespace WishListManagement.Services
             return WishListMapper.Map(wishLists);
         }
 
-        //public bool UpdateWithItem(WishListViewModel viewModel)
-        //{
-        //    var wishList = _repository.GetById(viewModel.Id);
-        //    wishList.Update(viewModel.Title,viewModel.Description);
-        //    wishList.UpdateItems(viewModel.WishListItems);
-        //}
+        public bool UpdateWithItem(WishListViewModel viewModel)
+        {
+            var wishList = _repository.GetById(viewModel.Id);
+            wishList.Update(viewModel.Title, viewModel.Description);
+            UpdateItems(viewModel, wishList);
+            return _repository.Update(wishList);
+
+        }
+
+        private static void UpdateItems(WishListViewModel viewModel, WishList wishList)
+        {
+            var wishListItems = WishListItemMapper.Map(viewModel.WishListItems);
+            wishList.UpdateItems(wishListItems);
+        }
 
         //private List<WishListItem> UpdateAllItems(List<WishListItemViewModel> items)
         //{
