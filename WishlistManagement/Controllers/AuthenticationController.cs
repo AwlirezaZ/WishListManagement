@@ -12,10 +12,10 @@ namespace WishListManagement.Controllers
 {
     public class AuthenticationController : Controller
     {
-        private readonly UserService _service;
-        public AuthenticationController()
+        private readonly IUserService _service;
+        public AuthenticationController(IUserService service)
         {
-            _service = new UserService();
+            _service = service;
         }
         // GET: Authentication
          

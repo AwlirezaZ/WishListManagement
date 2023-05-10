@@ -11,15 +11,13 @@ using WishListManagement.Repositories;
 
 namespace WishListManagement.Services
 {
-    public class WishListService
+    public class WishListService : IWishListService
     {
         private readonly WishListRepository _repository;
-        private readonly WishListItemRepository _itemRepository;
 
         public WishListService()
         {
             _repository = new WishListRepository();
-            _itemRepository = new WishListItemRepository();
         }
 
         public long Create(CreateWishListViewModel viewModel)

@@ -18,14 +18,6 @@ namespace WishListManagement.Controllers
             _userService = userService;
         }
 
-
-        //private readonly UserService _userService;
-        //public UserController()
-        //{
-        //    _userService = new UserService();
-        //}
-
-
         // GET: User
         public ActionResult Index()
         {

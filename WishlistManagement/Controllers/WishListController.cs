@@ -17,10 +17,10 @@ namespace WishListManagement.Controllers
     [Authorize]
     public class WishListController : Controller
     {
-        private readonly WishListService _service;
-        public WishListController()
+        private readonly IWishListService _service;
+        public WishListController(IWishListService service)
         {
-            _service = new WishListService();
+            _service = service;
         }
         public ActionResult Index()
         {
