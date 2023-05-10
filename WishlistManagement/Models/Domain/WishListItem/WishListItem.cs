@@ -32,6 +32,6 @@ namespace WishListManagement.Models.Domain.WishListItem
             RoughPrice = roughPrice;
             Priority = priority;
         }
-        public WishListItem(){}
+        private WishListItem(){}
     }
 }
