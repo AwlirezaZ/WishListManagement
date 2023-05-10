@@ -9,7 +9,7 @@ using WishListManagement.Repositories;
 
 namespace WishListManagement.Services
 {
-    public class WishListItemService
+    public class WishListItemService : IWishListItemService
     {
         private readonly WishListItemRepository _repository;
         public WishListItemService()
@@ -48,10 +48,5 @@ namespace WishListManagement.Services
             var wishListItems = _repository.GetWishListItemsByUserId(wishListId);
             return WishListItemMapper.Map(wishListItems);
         }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-    }
+    }s
 }

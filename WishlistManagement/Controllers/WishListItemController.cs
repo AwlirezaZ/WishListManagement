@@ -11,11 +11,11 @@ namespace WishListManagement.Controllers
     [Authorize]
     public class WishListItemController : Controller
     {
-        private readonly WishListItemService _service;
+        private readonly IWishListItemService _service;
 
-        public WishListItemController()
+        public WishListItemController(IWishListItemService service)
         {
-            _service = new WishListItemService();
+            _service = service;
         }
 
         public ActionResult Create(long wishListId)

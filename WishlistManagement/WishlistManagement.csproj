@@ -202,6 +202,7 @@
     <Compile Include="Repositories\WishListRepository.cs" />
     <Compile Include="Services\BaseEntityService.cs" />
     <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\IWishListItemService.cs" />
     <Compile Include="Services\IWishListService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\WishListItemService.cs" />

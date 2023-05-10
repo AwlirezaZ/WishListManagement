@@ -15,11 +15,16 @@ namespace WishListManagement.Core.Config
         public static IContainer Configure()
         {
             var builder = new ContainerBuilder();
+
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<WishListService>().As<IWishListService>();
+            builder.RegisterType<WishListItemService>().As<IWishListItemService>();
+            
             builder.RegisterType<UserController>().InstancePerRequest();
             builder.RegisterType<WishListController>().InstancePerRequest();
+            builder.RegisterType<WishListItemController>().InstancePerRequest();
             builder.RegisterType<AuthenticationController>().InstancePerRequest();
+
             var container= builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             return container;
