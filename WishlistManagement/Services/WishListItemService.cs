@@ -48,5 +48,5 @@ namespace WishListManagement.Services
             var wishListItems = _repository.GetWishListItemsByUserId(wishListId);
             return WishListItemMapper.Map(wishListItems);
         }
-    }s
+    }
 }
